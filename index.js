@@ -28,27 +28,27 @@ app.get('/dolar', async (req, res) => {
                 contenidoElementos.push(
                     encodeURI($(this).text()))
             });
-            res.send({"dolar blue": {
+            res.send({"blue": {
                 "compra": contenidoElementos[0],
                 "venta": contenidoElementos[1]
             },
-            "dolar oficial": {
+            "oficial": {
                 "compra": contenidoElementos[4],
                 "venta": contenidoElementos[5]
             },
-            "dolar bolsa": {
+            "bolsa": {
                 "compra": contenidoElementos[6],
                 "venta": contenidoElementos[7]
             },
-            "dolar contado con liqui": {
+            "liqui": {
                 "compra": contenidoElementos[8],
                 "venta": contenidoElementos[9]
             },
-            "dolar cripto": {
+            "cripto": {
                 "compra": contenidoElementos[10],
                 "venta": contenidoElementos[11]
             },
-            "dolar solidario": {
+            "solidario": {
                 "compra": contenidoElementos[12]
             },
         })
