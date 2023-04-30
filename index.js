@@ -28,30 +28,43 @@ app.get('/dolar', async (req, res) => {
                 contenidoElementos.push(
                     encodeURI($(this).text()))
             });
-            res.send({"blue": {
-                "compra": contenidoElementos[0],
-                "venta": contenidoElementos[1]
-            },
-            "oficial": {
-                "compra": contenidoElementos[4],
-                "venta": contenidoElementos[5]
-            },
-            "bolsa": {
-                "compra": contenidoElementos[6],
-                "venta": contenidoElementos[7]
-            },
-            "liqui": {
-                "compra": contenidoElementos[8],
-                "venta": contenidoElementos[9]
-            },
-            "cripto": {
-                "compra": contenidoElementos[10],
-                "venta": contenidoElementos[11]
-            },
-            "solidario": {
-                "compra": contenidoElementos[12]
-            },
-        })
+            res.send([
+                {
+                    "id":0,
+                    "tipo": "blue",
+                    "compra": contenidoElementos[0],
+                    "venta": contenidoElementos[1],
+                },
+                {
+                    "id":1,
+                    "tipo": "oficial",
+                    "compra": contenidoElementos[4],
+                    "venta": contenidoElementos[5],
+                },
+                {
+                    "id":2,
+                    "tipo": "bolsa",
+                    "compra": contenidoElementos[6],
+                    "venta": contenidoElementos[7],
+                },
+                {
+                    "id":3,
+                    "tipo": "liqui",
+                    "compra": contenidoElementos[8],
+                    "venta": contenidoElementos[9],
+                },
+                {
+                    "id":4,
+                    "tipo": "cripto",
+                    "compra": contenidoElementos[10],
+                    "venta": contenidoElementos[11],
+                },
+                {
+                    "id":5,
+                    "tipo": "solidario",
+                    "compra": contenidoElementos[12],
+                },
+            ])
         }
     })
 })
@@ -59,3 +72,5 @@ app.get('/dolar', async (req, res) => {
 app.listen(3000, () => {
     console.log('Server listening on port 3000');
   });
+
+
