@@ -24,39 +24,41 @@ app.get('/dolar', async (req, res) => {
             let $ = cheerio.load(body);
             const elementos = $(".val")
             let contenidoElementos = []
-            elementos.each(function(i,el){
+            elementos.each(function(){
+                let res = encodeURI($(this).text()).split("$")
                 contenidoElementos.push(
-                    encodeURI($(this).text()))
+                    res[1])
             });
+            console.log(contenidoElementos)
             res.send([
                 {
                     "id":0,
                     "tipo": "blue",
-                    "compra": contenidoElementos[0],
+                    "compra":contenidoElementos[0],
                     "venta": contenidoElementos[1],
                 },
                 {
                     "id":1,
                     "tipo": "oficial",
-                    "compra": contenidoElementos[4],
+                    "compra":contenidoElementos[4],
                     "venta": contenidoElementos[5],
                 },
                 {
                     "id":2,
                     "tipo": "bolsa",
-                    "compra": contenidoElementos[6],
+                    "compra":contenidoElementos[6],
                     "venta": contenidoElementos[7],
                 },
                 {
                     "id":3,
                     "tipo": "liqui",
-                    "compra": contenidoElementos[8],
+                    "compra":contenidoElementos[8],
                     "venta": contenidoElementos[9],
                 },
                 {
                     "id":4,
                     "tipo": "cripto",
-                    "compra": contenidoElementos[10],
+                    "compra":contenidoElementos[10],
                     "venta": contenidoElementos[11],
                 },
                 {
