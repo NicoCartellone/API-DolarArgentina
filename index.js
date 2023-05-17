@@ -4,12 +4,10 @@ const request = require('request')
 
 const app = express()
 
+app.use(express.static('public'))
+
 app.get('/', async (req, res) => {
-    res.send(
-        `<h1>Api dolar Argentina</h1>
-        <h2>Endpoint para ver la cotización del dolar: <strong>/dolar</strong></h2>
-        `
-        )
+    res.sendFile('index.html')
 })
 
 app.get('/dolar', async (req, res) => {
@@ -33,7 +31,6 @@ app.get('/dolar', async (req, res) => {
                 contenidoElementos.push(
                     res[1])
             });
-            console.log(contenidoElementos)
             res.send([
                 {
                     "id":0,
