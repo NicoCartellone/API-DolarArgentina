@@ -44,6 +44,7 @@ app.get('/', async (req, res) => {
        <div class="endpoint-description">Obtener las cotizaciones del dólar</div>
        <div class="code">GET /dolar</div>
      </div>
+     <p>Nico Cartellone - 2023</p>
    </body>
    </html>
    `
