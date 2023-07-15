@@ -14,6 +14,7 @@ app.get('/', async (req, res) => {
        body {
          font-family: Arial, sans-serif;
          margin: 20px;
+         text-align: center;
        }
        h1 {
          color: #333;
